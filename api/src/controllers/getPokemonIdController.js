@@ -3,6 +3,9 @@ const axios = require ('axios')
 const {Pokemon, Type} = require ('../db')
 
 const getPokemonsIdController = async (id) =>{
+    try{
+
+   
 
     if(isNaN(id)){
         return await Pokemon.findOne({
@@ -10,7 +13,7 @@ const getPokemonsIdController = async (id) =>{
             include:{
                 model: Type,
                 attributes: {
-                    exclude: [id]
+                    exclude: ["id"]
 
                 }, 
                 through: {
@@ -36,6 +39,10 @@ const getPokemonsIdController = async (id) =>{
             types: data.types.map((type)=>type.type.name)
         }
         return pokemonId
+    }
+}
+    catch(error){
+        throw new Error ('THE POKEMON ID IS INVALID')
     }
 
 }

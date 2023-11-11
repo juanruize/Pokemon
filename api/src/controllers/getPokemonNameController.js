@@ -1,20 +1,37 @@
-const axios = require ('axios')
+ const axios = require ('axios')
 
 const {Pokemon, Type} = require ('../db')
 
-const getPokemonNameController = async (name)=>{
+ const getPokemonNameController = async (name)=>{
+    let pokemons = []
     if(!name) throw new Error ('PLEASE PROVIDE A VALID NAME')
+    name=name.toLowerCase()
+    try{
 
-    const pokemoCreated = await Pokemon.findAll({
+    
+    const pokemonCreated = await Pokemon.findAll({
         where: {
             name: name
+        },
+        include:{
+            model:Type,
+            attributes:{
+                exclude: ["id"]
+            },
+            through: {
+                attributes: []
+            }
         }
     })
+    if(pokemonCreated.length) return pokemonCreated
+
     const url = `https://pokeapi.co/api/v2/pokemon/${name}`
     const {data} = await axios (url)
-
+    
+    
     const pokemonName = {
-        //id: id,
+        
+        id:data.id,
         name: data.name,
         image: data.sprites.other.home.front_default,
         hp: data.stats.find((stat)=>stat.stat.name === 'hp').base_stat,
@@ -26,6 +43,12 @@ const getPokemonNameController = async (name)=>{
         types: data.types.map((type)=>type.type.name)
     }
     return pokemonName
+}
+catch(error){
+   if(pokemons.length===0) throw new Error ("POKEMON NO EXISTE")
+    
+}
+
 }
 module.exports ={
     getPokemonNameController
