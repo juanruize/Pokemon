@@ -45,7 +45,7 @@ const {Pokemon, Type} = require ('../db')
     return pokemonName
 }
 catch(error){
-   if(pokemons.length===0) throw new Error ("POKEMON NO EXISTE")
+   if(pokemons.length===0 && !pokemonName ) throw new Error ("POKEMON NO EXISTE")
     
 }
 

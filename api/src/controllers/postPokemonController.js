@@ -3,12 +3,12 @@ const { Pokemon , Type} = require('../db');
 const axios = require('axios');
 
 const postPokemon = async (id, name, image, hp, attack, defense, speed, height, weight, types) => {
-        if(!name || !image || !hp || !attack || !defense || !speed || !height || !weight || !types){
+        if(!name || !image || !hp || !attack || !defense || !types){
             throw new Error("ALL FIELDS ARE REQUIRED")
         }
-        if(types.length<2){
-            throw new Error("DEBE TENER PO LO MENOS 2 TIPOS")
-        }
+        // if(types.length<2){
+        //     throw new Error("DEBE TENER POR LO MENOS 2 TIPOS")
+        // }
         let prueba=true;
        name = name.toLowerCase()
         const existingPokemon = await Pokemon.findOne({ where: { name } });
