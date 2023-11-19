@@ -1,0 +1,17 @@
+.nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #222016d7;
+    height: 60px;
+    border: solid rgb(123, 119, 112) 2px;
+    border-radius: 10px;
+  }
+  .logo{
+    float: left; 
+    width: 150px;
+    height: 60px;
+    
+  }
+
+ 

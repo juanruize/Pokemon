@@ -6,7 +6,7 @@ const getPokemonsController = async()=>{
 
     try {
         const url = `https://pokeapi.co/api/v2/pokemon`
-    const limit = 10
+    const limit = 30
     const {data} = await axios(`${url}?limit=${limit}`)
 
     const pokemons = data.results
@@ -14,7 +14,7 @@ const getPokemonsController = async()=>{
     const detailPokemons = await Promise.all(pokemons.map(async(pokemon)=>{
         const {data}= await axios(pokemon.url)
         const character={
-            
+            id: data.id,
             name: data.name,
             image: data.sprites.other.home.front_default,
             hp: data.stats.find((stat)=>stat.stat.name === 'hp').base_stat,

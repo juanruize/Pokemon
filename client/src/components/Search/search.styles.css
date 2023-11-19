@@ -1,0 +1,40 @@
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Centra verticalmente en la página completa */
+  }
+  
+  /* Estilos para la barra de búsqueda */
+  .search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  /* Estilos para el campo de entrada de texto */
+  .search-input {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    outline: none;
+  }
+  
+  /* Estilos para el botón de búsqueda */
+  .search-button {
+    padding: 8px 12px;
+    background-color: #616762; /* Color de fondo verde (puedes cambiarlo) */
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+  
+  /* Estilos adicionales para hacerlo "bonito" */
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Color de fondo de la página (puedes cambiarlo) */
+  }

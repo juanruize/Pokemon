@@ -6,7 +6,9 @@ import React from 'react';
 function Landing () {
     return(
         <div>
-         <p>aqui el Landing</p>
+         <Link to = "/Home">
+            <button>empecemos</button>
+            </Link>
         </div>
     )
 }

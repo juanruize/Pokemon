@@ -1,0 +1,13 @@
+.selectType {
+    width: 200px;
+    height: 300px;
+   
+    border-radius: 5px;
+    transition: all 0.3s;
+    cursor: pointer;
+    background: white;
+    font-size: 0.9em;
+    text-align: center;
+   
+    
+  }

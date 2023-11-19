@@ -1,0 +1,12 @@
+.cards {
+    display: flex;
+    margin-left: 50px;
+    margin-right: 10px;
+    align-content: center;
+    justify-content: space-between;
+    grid-template-columns: repeat(6,1fr);
+    flex-wrap: wrap;
+    grid-gap: 15px;
+    
+    
+    }
