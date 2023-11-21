@@ -1,15 +1,21 @@
 import {Link} from 'react-router-dom'
-//import { addFav, removeFav } from '../redux/actions';
-import { connect } from 'react-redux';
-import React from 'react';
+import style from "../Landing/Landing.module.css"
+import pokebola from "../assets/pokemon.webp"
+import go from '../assets/pokepoke.png'
 
 function Landing () {
     return(
-        <div>
+        <>
+        
+        <div className={style.landing}>
+            <img src={pokebola} className={style.img}/>
          <Link to = "/Home">
-            <button>empecemos</button>
+            <h1>go</h1>
             </Link>
+        
         </div>
+        
+        </>
     )
 }
 export default Landing

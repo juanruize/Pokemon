@@ -9,7 +9,7 @@ import '../Cards/Cards.styles.css'
 const Cards = ({currentCharacters})=>{
 
     const pokemonsList= currentCharacters
-    console.log(pokemonsList)
+    
 
     return (
         <div className='cards'>

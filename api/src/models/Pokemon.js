@@ -17,10 +17,10 @@ module.exports = (sequelize) => {
     image: {
       type: DataTypes.STRING,
       allowNull: false,
-      // validate :{
-      //   isurl: true
+      validate :{
+        isUrl: true
 
-      // }
+      }
 
     },
     hp: {

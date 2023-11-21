@@ -3,12 +3,11 @@ import axios from "axios";
 import { 
     GET_ALL_POKEMONS,
     LOAD_POKEMON,
-    ORDER_ATTACK,
-    ORDER_BY_NAME,
     SET_FILTER_BY_ORIGIN,
     SET_FILTER_BY_TYPE, 
-    GET_POKEMON, 
-    GET_ALL_TYPES } from "./action-types";
+    GET_ALL_TYPES,
+    ORDER
+   } from "./action-types";
 
 const endPoint = "http://localhost:3001"
 
@@ -63,6 +62,27 @@ export const getPokemons = () => {
           return alert(`ERROR SERVER`);
         
       }
+    }
+
+  }
+  
+  export const setFilterByType = (types)=>{
+    return{
+      type: SET_FILTER_BY_TYPE,
+      payload: types
+    }
+  }
+  export const setFilterByOrigin = (payload)=>{
+    return{
+      type: SET_FILTER_BY_ORIGIN,
+      payload,
+    }
+  }
+  
+  export const orderBy = (order)=>{
+    return{
+      type: ORDER,
+      payload: order
     }
 
   }

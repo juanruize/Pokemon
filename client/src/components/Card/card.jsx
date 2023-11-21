@@ -6,7 +6,6 @@ import "../Card/Card.styles.css"
 
 
 function Card ({id, name, image, attack, types}) {
-console.log(types)
 
 
 if (!(typeof types[0]=== "string")){

@@ -50,7 +50,7 @@ const Search = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const pokemonDetail = useSelector((state) => state.pokemonDetail);
-    console.log(pokemonDetail)
+    
     const [name, setName] = useState('');
   
     useEffect(() => {
